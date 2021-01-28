@@ -1,8 +1,8 @@
 # Newsliner
 
-A Newsletter-first theme for [Ghost](http://github.com/tryghost/ghost/) brought to you by [Epilocal](https://www.epilocal.com/). This is the development version of Newsliner - if you're just looking to download the latest release, you can get it from [here](https://www.epilocal.com/products/free-ghost-theme/).
+Newsliner is a newsletter-first theme for [Ghost](http://github.com/tryghost/ghost/) brought to you by [Epilocal](https://www.epilocal.com/). This is the development version of Newsliner - if you're just looking to download the latest release, you can get it from [here](https://www.epilocal.com/products/free-ghost-theme/).
 
-If you have any questions or need support, you can contact the development team at https://www.epilocal.com/contact/ or raise an issue on Github here: [releases](https://github.com/epilocal/newsliner/issues)
+If you have any questions or need support, you can contact the development team at https://www.epilocal.com/contact/ or raise an issue on Github [here](https://github.com/epilocal/newsliner/issues)
 
 &nbsp;
 
