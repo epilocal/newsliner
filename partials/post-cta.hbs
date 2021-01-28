@@ -1,0 +1,8 @@
+<section class="post-full-content">
+  <div class="post-cta-inner">
+    <h3 class="subscribe-form-title-alternate">Subscribe to {{@site.title}}</h3>
+    {{!-- Use site description for email CTA.  Default wording in case Description not provided --}}
+    <p class="subscribe-form-description-alternate">{{#if @site.description}}{{@site.description}}{{else}}Get the latest posts delivered right to your inbox{{/if}}</p>
+    {{> subscribe-form}}
+  </div>
+</section>

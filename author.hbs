@@ -1,0 +1,32 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+
+<header class="site-archive-header">
+    {{> site-header}}
+</header>
+
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer site-archive">
+  {{#author}}
+  <div class="inner">
+      {{#if profile_image}}
+        <div class="author-image-container">
+            <img class="term-image u-object-fit" src={{img_url profile_image size="xs"}} alt="{{name}}">
+        </div>
+      {{/if}}
+      <h1 class="site-title">{{name}}</h1>
+      <p class="site-description">{{bio}}</p>
+  </div>
+  {{/author}}
+    <div class="inner posts">
+        <div class="post-feed">
+            {{#foreach posts visibility="all"}}
+                {{!-- The tag below includes the markup for each post using the post-card-large style - partials/post-card.hbs --}}
+                {{> "post-card" post_large=true}}
+            {{/foreach}}
+        </div>
+        {{pagination}}
+    </div>
+</main>

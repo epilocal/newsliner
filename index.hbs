@@ -1,0 +1,45 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<header class="site-home-header">
+  <div class="inner">
+      {{> "site-header"}}
+  </div>
+  {{!-- Hero - partials/hero.hbs --}}
+  {{> "hero"}}
+
+</header>
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+    <div class="inner posts">
+        <div class="post-feed">
+              {{!-- Filter to get 2 most recent Featured posts --}}
+              {{#get "posts" limit="2" include="tags,authors" filter="featured:true" as |featuredPosts|}}
+              {{!-- Filter to get 4 most recent non-Featured posts --}}
+              {{#get "posts" limit="4" include="tags,authors" filter="featured:false" as |nonFeaturedPosts|}}
+                {{!-- Full-screen post-card-large for Featured post - partials/post-card.hbs --}}
+                 {{#foreach featuredPosts visibility="all" limit="1"}}
+                    {{> "post-card" post_large=true}}
+                 {{/foreach}}
+                 {{!-- Half-screen post-card for 2 non-Featured posts - partials/post-card.hbs --}}
+                 {{#foreach nonFeaturedPosts visibility="all" limit="2" from="1" to="2"}}
+                    {{> "post-card"}}
+                 {{/foreach}}
+                 {{!-- Full-screen post-card-large for Featured post - partials/post-card.hbs --}}
+                 {{#foreach featuredPosts visibility="all" limit="1" from="2" to="2" }}
+                    {{> "post-card" post_large=true}}
+                 {{/foreach}}
+                 {{!-- Half-screen post-card for 2 non-Featured posts - partials/post-card.hbs --}}
+                 {{#foreach nonFeaturedPosts visibility="all" limit="2" from="3" to="4" }}
+                    {{> "post-card"}}
+                 {{/foreach}}
+              {{/get}}
+              {{/get}}
+
+
+
+        </div>
+    </div>
+</main>

@@ -1,0 +1,48 @@
+<div class="outer site-nav-main">
+    <div class="inner">
+      <div class="site-nav-main-container">
+        <div class="site-nav-container-small">
+          <div class="site-nav-left">
+              {{#if @site.secondary_navigation}}
+                  {{navigation type="secondary"}}
+              {{else}}
+                  <div class="social-links">
+                      {{#if @site.facebook}}
+                          <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                      {{/if}}
+                      {{#if @site.twitter}}
+                          <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                      {{/if}}
+                  </div>
+                      <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+              {{/if}}
+          </div>
+        </div>
+        <div class="site-nav-container-large">
+          <h1 class="site-logo-title">
+            {{#if @site.logo}}
+                <a href="/"><img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" /></a>
+            {{else}}
+                <a href="/">{{@site.title}}</a>
+            {{/if}}
+          </h1>
+        </div>
+        <div class="site-nav-container-small">
+          <div class="site-nav-right">
+            {{#if @labs.members}}
+              {{#unless @member}}
+                <a class="subscribe-button" href="#/portal/signin">Login</a>
+                {{/unless}}
+                {{#if @member}}
+                  <a class="subscribe-button" href="#/portal" >{{@member.email}}</a>
+                  {{/if}}
+            {{/if}}
+
+          </div>
+        </div>
+      </div>
+      <div class="site-nav-container">
+        {{> "site-nav"}}
+      </div>
+    </div>
+</div>

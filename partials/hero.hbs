@@ -1,0 +1,18 @@
+{{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+  <div class="site-hero">
+    <div class="site-hero-overlay">
+      <div class="site-hero-content">
+          <h1 class="site-description">
+              {{@site.description}}
+          </h1>
+          {{!--Hide subscribe form in Hero if logged in already--}}
+          {{#if @labs.members}}
+            {{#unless @member}}
+              {{> subscribe-form }}
+            {{/unless}}
+          {{/if}}
+
+      </div>
+    </div>
+  </div>
+</div>

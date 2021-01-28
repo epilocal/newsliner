@@ -1,0 +1,28 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+
+<header class="site-archive-header">
+    {{> site-header}}
+
+</header>
+
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer site-archive">
+  {{#tag}}
+  <div class="inner">
+      <h1 class="site-title">{{name}}</h1>
+      <p class="site-description">{{description}}</p>
+  </div>
+  {{/tag}}
+    <div class="inner posts">
+        <div class="post-feed">
+            {{#foreach posts visibility="all"}}
+                {{!-- The tag below includes the markup for each post using the post-card-large style.  Tags are hidden because they will all be the same on the Tag page - partials/post-card.hbs --}}
+                {{> "post-card" post_large=true hide_tag=true}}
+            {{/foreach}}
+        </div>
+        {{pagination}}
+    </div>
+</main>

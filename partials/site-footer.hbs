@@ -1,0 +1,22 @@
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <div class="site-footer-social">
+        {{#if @site.facebook}}
+            <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+        {{/if}}
+        {{#if @site.twitter}}
+            <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+        {{/if}}
+        <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+        </div>
+
+        <div class="site-footer-copyright">
+          <a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}} | Powered by
+          <a href="https://ghost.org/" target="_blank" rel="noopener noreferrer">Ghost</a> with Theme by <a href="https://www.epilocal.com/" target="_blank" rel="noopener noreferrer">Epilocal</a>
+        </div>
+    </div>
+
+
+  </div>
+
+</footer>

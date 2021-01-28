@@ -1,0 +1,16 @@
+{{!-- Navigation menu for mobile overlay --}}
+<nav id="site-nav-mobile" class="site-nav-mobile-menu">
+  <div class="site-nav-mobile-menu-content">
+      <h1 class="site-logo-title">
+        {{#if @site.logo}}
+            <a href="/"><img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" /></a>
+        {{else}}
+            <a href="/">{{@site.title}}</a>
+        {{/if}}
+      </h1>
+    {{!-- Nav - partials/navigation.hbs --}}
+    {{#if @site.navigation}}
+        {{navigation}}
+    {{/if}}
+  </div>
+</nav>
