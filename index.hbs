@@ -20,19 +20,19 @@ into the {body} of the default.hbs template --}}
               {{!-- Filter to get 4 most recent non-Featured posts --}}
               {{#get "posts" limit="4" include="tags,authors" filter="featured:false" as |nonFeaturedPosts|}}
                 {{!-- Full-screen post-card-large for Featured post - partials/post-card.hbs --}}
-                 {{#foreach featuredPosts visibility="all" limit="1"}}
+                 {{#foreach featuredPosts limit="1"}}
                     {{> "post-card" post_large=true}}
                  {{/foreach}}
                  {{!-- Half-screen post-card for 2 non-Featured posts - partials/post-card.hbs --}}
-                 {{#foreach nonFeaturedPosts visibility="all" limit="2" from="1" to="2"}}
+                 {{#foreach nonFeaturedPosts limit="2" from="1" to="2"}}
                     {{> "post-card"}}
                  {{/foreach}}
                  {{!-- Full-screen post-card-large for Featured post - partials/post-card.hbs --}}
-                 {{#foreach featuredPosts visibility="all" limit="1" from="2" to="2" }}
+                 {{#foreach featuredPosts limit="1" from="2" to="2" }}
                     {{> "post-card" post_large=true}}
                  {{/foreach}}
                  {{!-- Half-screen post-card for 2 non-Featured posts - partials/post-card.hbs --}}
-                 {{#foreach nonFeaturedPosts visibility="all" limit="2" from="3" to="4" }}
+                 {{#foreach nonFeaturedPosts limit="2" from="3" to="4" }}
                     {{> "post-card"}}
                  {{/foreach}}
               {{/get}}

@@ -18,7 +18,7 @@
   {{/tag}}
     <div class="inner posts">
         <div class="post-feed">
-            {{#foreach posts visibility="all"}}
+            {{#foreach posts visibility=public}}
                 {{!-- The tag below includes the markup for each post using the post-card-large style.  Tags are hidden because they will all be the same on the Tag page - partials/post-card.hbs --}}
                 {{> "post-card" post_large=true hide_tag=true}}
             {{/foreach}}

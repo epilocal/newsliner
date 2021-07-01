@@ -78,11 +78,9 @@ into the {body} of the default.hbs template --}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.members}}
-              {{#unless @member}}
-                {{> post-cta}}
-              {{/unless}}
-            {{/if}}
+            {{#unless @member}}
+              {{> post-cta}}
+            {{/unless}}
 
 
             {{!-- if the user does not have access, show them an upgrade CTA --}}
@@ -112,7 +110,7 @@ into the {body} of the default.hbs template --}}
                     <section class="related-posts-container">
                         <h3 class="related-posts-title"><span class="text">You might also like...</span></h3>
                           <div class="post-feed">
-                            {{#foreach related_posts}}
+                            {{#foreach related_posts }}
                                 {{> "post-card"}}
                             {{/foreach}}
                         </div>

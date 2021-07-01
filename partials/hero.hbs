@@ -6,11 +6,9 @@
               {{@site.description}}
           </h1>
           {{!--Hide subscribe form in Hero if logged in already--}}
-          {{#if @labs.members}}
-            {{#unless @member}}
-              {{> subscribe-form }}
-            {{/unless}}
-          {{/if}}
+          {{#unless @member}}
+            {{> subscribe-form }}
+          {{/unless}}
 
       </div>
     </div>
